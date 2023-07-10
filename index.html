@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOCK</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9e4c8da7f5.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="clock">
+        <div class="container">
+
+            <div class="analog-clock">
+
+                <div class="hour">
+                    <div class="hr" id="hr"></div>
+                </div>
+
+                <div class="min">
+                    <div class="mn" id="mn"></div>
+                </div>
+    
+                <div class="sec">
+                    <div class="sc" id="sc"></div>
+                </div>
+    
+    
+                <span style="--i:1"><b>1</b></span>
+                <span style="--i:2"><b>2</b></span>
+                <span style="--i:3"><b>3</b></span>
+                <span style="--i:4"><b>4</b></span>
+                <span style="--i:5"><b>5</b></span>
+                <span style="--i:6"><b>6</b></span>
+                <span style="--i:7"><b>7</b></span>
+                <span style="--i:8"><b>8</b></span>
+                <span style="--i:9"><b>9</b></span>
+                <span style="--i:10"><b>10</b></span>
+                <span style="--i:11"><b>11</b></span>
+                <span style="--i:12"><b>12</b></span>
+
+    
+            </div>
+            
+            <div class="digital-clock">
+                
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="mins">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+        </div>
+    </div>
+    
+   <script>
+     var second=0;
+     var minute=0;
+     var hour =0;
+     var d= new Date();
+
+        setInterval(
+            function(){
+                d=new Date();
+                second=  d.getSeconds() * 6;
+                minute= d.getMinutes() * 6;
+                hour= d.getHours() * 30;
+
+                document.getElementById("sc").style.transform = "rotate(" + second + "deg)";
+                document.getElementById("mn").style.transform = "rotate(" + minute + "deg)";
+                document.getElementById("hr").style.transform = "rotate(" + hour + "deg)";
+
+            
+
+
+    let HOURS=document.getElementById("hrs");
+    let MINUTES=document.getElementById("mins");
+    let SECONDS=document.getElementById("sec");
+  
+    // 1000 millisec=1sec
+
+    
+     let currentTime=new Date();
+
+    hrs.innerHTML= (currentTime.getHours()<10?"0":"")+currentTime.getHours();
+    mins.innerHTML= (currentTime.getMinutes()<10?"0":"")+currentTime.getMinutes();
+    sec.innerHTML=(currentTime.getSeconds()<10?"0":"")+currentTime.getSeconds();
+    },1000)
+   
+   </script> 
+</body>
+</html>
